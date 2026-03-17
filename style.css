@@ -435,7 +435,7 @@ body{
 #circular_gauges{
     position: absolute;
     height: 9%;
-    width: 13.5%;
+    width: 17.5%;
     bottom: 70.95%;
     left: 32.6%;
     transition: all;
@@ -450,15 +450,15 @@ body{
 
 
 #circular_gauges1{
-    position: absolute;
+  position: absolute;
     height: 9%;
     width: 13.5%;
-    bottom: 73.95%;
-    left: 39.6%;
+    bottom: 70.95%;
+    left: 32.6%;
     transition: all;
     transition-duration: 1s;
     z-index: 2;
-    visibility: hidden;
+   visibility: hidden;
     
     
   transition: transform 1s ease-in-out;
@@ -2938,6 +2938,25 @@ bottom: 5%; */
 
 }
 
+#observation_table_Note {
+  position: absolute;
+  width: 35%;
+  height: 14.4%;
+  top : 65.0%;
+  left: 15.8%;
+  visibility: hidden;
+  z-index: 30;
+}
+
+#observation_table_Note_1750 {
+  position: absolute;
+  width: 35%;
+  height: 14.4%;
+  top : 65.0%;
+  left: 65.8%;
+  visibility: hidden;
+  z-index: 30;
+}
 /* #centrifuge_top_filling {
   position: absolute;
  width: 18.19%;

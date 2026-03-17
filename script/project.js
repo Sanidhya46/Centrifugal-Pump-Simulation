@@ -52,6 +52,7 @@ let f=0;
 // let trial=1;
 
 function start(){
+    startbutton.style.visibility = "hidden"
     console.log("hello world")
      if(f === 0){
         startlab.style.visibility="hidden"
