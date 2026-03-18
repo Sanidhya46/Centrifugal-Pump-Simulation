@@ -546,33 +546,30 @@ setTimeout(() => {
                  setTimeout(() => {
                 observation_table_1150_text.style.visibility = "visible"
                 popUp(observation_table_1150_text)
-                    f = 20.5;
+                    f = 20.2;
                       observation_table_1150_text.addEventListener("click", () => {
 
-                    
-            
-    pulse(observation_table_1150_text);
+             if(f === 20.2){
+              f = 20.3;
+               ins.innerText = "click on the observation table again to close the observation table"
+              observation_table_1150.style.visibility = "visible";
+                       observation_table_Note.style.visibility ="visible"
+                       ins.innerText = "click on the observation table again to close the observation table"
+                        observation_table_1150_text.addEventListener("click", () => {
+             if(f === 20.3){
+              f = 20.5;
+              console.log("observation table closed")
+              observation_table_1150.style.visibility = "hidden";
+              observation_table_Note.style.visibility = "hidden"
+              popUp(observation_table_1150_text)
+              
         
         console.log("the value of f is on seraching for better", f)
-    if (observation_table_1150.style.visibility === "visible") {
-        observation_table_1150.style.visibility = "hidden";
-        observation_table_Note.style.visibility ="hidden"
-         ins.innerText = "Now record all the values this is the value at 1150 RPM For Pump A, We have to compare Readings with different flow rates ✅✅"  
-    } else {
-        observation_table_1150.style.visibility = "visible";
-        observation_table_1150_text.style.visibility = "visible";
-        observation_table_Note.style.visibility ="visible"
-         ins.innerText = "Now record all the values this is the value at 1150 RPM For Pump A, We have to compare Readings with different flow rates ✅✅"  
-    }
- 
-});
-       rotating_gauges1.style.visibility = "hidden"
-       rotating_gauges2.style.visibility = "visible"
- setTimeout(() => {
+              setTimeout(() => {
    
     if (f === 20.5 ){
       f = 21; 
-      console.log("f for 20.5 is running for f equal to 21")
+      console.log("f for 20.5 is running for f equal to 21", f)
       console.log("the value of f is", f)
        ins.innerText = "Now Click On Next Button To Repeat The Experiment For Different Flow Rate Such As 85%"    
                 ins.innerText = "Now Click On Next Button To Repeat The Experiment For Different Flow Rate Such As 85%"      
@@ -583,7 +580,14 @@ setTimeout(() => {
     startbutton.innerText = "Next";  // ✅ Corrected
      startbutton.onclick = pump_85;
  }else{console.log("the value of f is not 20.5", f)}
-                  },3000)    //2500
+                  },1000)  
+  }
+  })
+  }
+});
+       rotating_gauges1.style.visibility = "hidden"
+       rotating_gauges2.style.visibility = "visible"
+   //2500
        },1000)    //1500
 
       }else{console.log("not equal to 20")}
@@ -762,7 +766,8 @@ function pump_85() {
     ins.innerText = "Now Rotate Valves to make the maximum flow rate 85%"
       rotating_gauges2.addEventListener("click",  () => {
          if( f === 21){
-          f = 22;
+          f = 20.8;
+        
     rotating_gauges2.style.transform = "rotate(120deg)"
              console.log("rotating_gauges2 works")
                       setTimeout(() => {
@@ -795,29 +800,30 @@ function pump_85() {
         pumpA_discharge_pressure.innerText = "66.6"
         pump_additional_pressure.innerText = "0.37"
 
-        ins.innerText = "Now Record All The Readings For 85% Flow Rate"
+        ins.innerText = "Click on the observation table to Record All The Readings For 85% Flow Rate"
           observation_table_command.style.visibility = "visible";
           observation_table_1150_text1.style.visibility = "visible";
           observation_table_1150.style.visibility = "hidden";
           observation_table_1150.style.opacity = "0%";
      
           pulse(observation_table_command)
-                      observation_table_1150_text1.addEventListener("click",  () => {
-                        
-    pulse(observation_table_1150_text1);
-
-    if (observation_table_85.style.visibility === "visible") {
-        observation_table_85.style.visibility = "hidden";
-       observation_table_Note.style.visibility = "hidden"
-    } else {
-        observation_table_85.style.visibility = "visible";
-        observation_table_1150_text1.style.visibility = "visible";
-        observation_table_Note.style.visibility = "visible"
-
-    }
-  
-},);
-  setTimeout(() => {
+          
+                         observation_table_1150_text1.addEventListener("click",  () => {
+             if(f === 20.8){
+              f = 20.9;
+               pulse(observation_table_1150_text1);
+              observation_table_85.style.visibility = "visible";
+                       observation_table_Note.style.visibility ="visible"
+                       ins.innerText = "Click on the observation table again to close the observation table"
+                             observation_table_1150_text1.addEventListener("click",  () => {
+             if(f === 20.9){
+              f = 22;
+             observation_table_85.style.visibility = "hidden";
+              popUp(observation_table_1150_text)
+              observation_table_Note.style.visibility = "hidden"
+        
+        console.log("the value of f is on seraching for better", f)
+        setTimeout(() => {
              ins.innerText = "Click on the next button after recording all the data for 85% , Now the time for 60 %"
                startbutton.style.visibility = "visible"
               startbutton.style.opacity = "100%";
@@ -825,6 +831,11 @@ function pump_85() {
     startbutton.innerText = "Next";  // ✅ Corrected
      startbutton.onclick = pump_60;
      }, 1000);
+  }
+  })
+  }
+});
+ 
              }, 1000);    //1500
            }, 1000);
          }, 1000);
@@ -833,10 +844,11 @@ function pump_85() {
 }
 
 function pump_60() {
+  startbutton.style.visibility = "hidden"
     ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 60%"
        rotating_gauges2.addEventListener("click",  () => {
         if( f === 22){
-          f = 23;
+          f = 22.7;
     rotating_gauges2.style.transform = "rotate(190deg)"
              console.log("rotating_gauges2 works")
                       setTimeout(() => {
@@ -878,27 +890,35 @@ function pump_60() {
           observation_table_85.style.opacity = "0%";
           ins.innerText = "Now Click On The Observation Table To see the reading at the 60% flow rate"
           pulse(observation_table_command)
-                      observation_table_1150_text2.addEventListener("click",  () => {
-                      
-    pulse(observation_table_1150_text2);
-
-    if (observation_table_60.style.visibility === "visible") {
-        observation_table_60.style.visibility = "hidden";
-       observation_table_Note.style.visibility = "hidden"
-    } else {
-        observation_table_60.style.visibility = "visible";
-        observation_table_1150_text2.style.visibility = "visible";
-        observation_table_Note.style.visibility = "visible"
-    }
-});
-  setTimeout(() => {
+                               observation_table_1150_text2.addEventListener("click",  () => {
+             if(f === 22.7){
+              f = 22.8;
+                 pulse(observation_table_1150_text2);
+                 observation_table_60.style.visibility = "visible";
+                       observation_table_Note.style.visibility ="visible"
+                       ins.innerText = "click on the observation table again to close it"
+                     observation_table_1150_text2.addEventListener("click",  () => {
+             if(f === 22.8){
+              f = 23;
+              observation_table_Note.style.visibility = "hidden"
+               observation_table_60.style.visibility = "hidden";
+              popUp(observation_table_1150_text2)
+              
+        
+        console.log("the value of f is on seraching for better", f)
+          setTimeout(() => {
              ins.innerText = "Click on the next button after recording all the data for 60% , Now the time for 40 %"
-               
+               startbutton.style.visibility = "visible"
               startbutton.style.opacity = "100%";
     startlab.style.visibility = "visible";
     startbutton.innerText = "Next";  // ✅ Corrected
      startbutton.onclick = pump_40;
      }, 1000);
+  }
+  })
+  }
+});
+ 
              }, 100);    //1500
            }, 1000);
          }, 1000);
@@ -908,10 +928,11 @@ function pump_60() {
 }
 
 function pump_40() {
+  startbutton.style.visibility = "hidden"
     ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 40%"
        rotating_gauges2.addEventListener("click",  () => {
          if( f === 23){
-          f = 24;
+          f = 23.8;
           console.log()
     rotating_gauges2.style.transform = "rotate(420deg)"
              console.log("rotating_gauges2 works")
@@ -924,6 +945,7 @@ function pump_40() {
         pumpB_suction_pressure.innerText = "0.55"
         pumpA_discharge_pressure.innerText = "66.4"
         pump_additional_pressure.innerText = "0.471"
+
         setTimeout(() => {
                       pumpA_differential_pressure.innerText = "3.42"
         pumpA_volumeteric_rate.innerText = "18.23"
@@ -950,38 +972,42 @@ function pump_40() {
         ins.innerText = "Now Record All The Readings For 40% Flow Rate"
           observation_table_command.style.visibility = "visible";
           observation_table_1150_text3.style.visibility = "visible";
-          let visibility = window.getComputedStyle(observation_table_1150_text3).visibility;
+       
 
-if (visibility === "visible") {
-    console.log("Element is visible");
-} else {
-    console.log("Element is not visible");
-}
+
           observation_table_60.style.visibility = "hidden";
           observation_table_60.style.opacity = "0%";
           ins.innerText = "Now Click On The Observation Table To see the reading at the 40% flow rate"
           pulse(observation_table_command)
-                      observation_table_1150_text3.addEventListener("click",  () => {
-                      
-    pulse(observation_table_1150_text3);
-          console.log("observation_table_40 is running")
-    if (observation_table_40.style.visibility === "visible") {
-        observation_table_40.style.visibility = "hidden";
-       observation_table_Note.style.visibility = "hidden"
-    } else {
-        observation_table_40.style.visibility = "visible";
-        observation_table_1150_text3.style.visibility = "visible";
-         observation_table_Note.style.visibility = "visible"
-    }
-});
-  setTimeout(() => {
-             ins.innerText = "Click on the next button after recording all the data for 40% , Now the time for 00%"
-                console.log("the text is displaye correctly ")
+                                          observation_table_1150_text3.addEventListener("click",  () => {
+             if(f === 23.8){
+              f = 23.9;
+                 pulse(observation_table_1150_text3);
+                 observation_table_40.style.visibility = "visible";
+                       observation_table_Note.style.visibility ="visible"
+                       ins.innerText = "click on the observation table again to close it"
+                     observation_table_1150_text3.addEventListener("click",  () => {
+             if(f === 23.9){
+              f = 24;
+              observation_table_Note.style.visibility = "hidden"
+               observation_table_40.style.visibility = "hidden";
+              popUp(observation_table_1150_text3)
+              
+         
+        console.log("the value of f is on seraching for better", f)
+          setTimeout(() => {
+             ins.innerText = "Click on the next button after recording all the data for 40% , Now the time for 00 %"
+               startbutton.style.visibility = "visible"
               startbutton.style.opacity = "100%";
     startlab.style.visibility = "visible";
     startbutton.innerText = "Next";  // ✅ Corrected
      startbutton.onclick = pump_00;
      }, 1000);
+  }
+  })
+  }
+});
+ 
              }, 1000);    //1500
            }, 1000);
          }, 1000);
@@ -991,10 +1017,11 @@ if (visibility === "visible") {
 }
 
 function pump_00() {
-    ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 85%"
+  startbutton.style.visibility = "hidden"
+    ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 00%"
        rotating_gauges2.addEventListener("click",  () => {
          if( f === 24){
-          f = 25;
+          f = 24.8;
     rotating_gauges2.style.transform = "rotate(520deg)"
              console.log("rotating_gauges2 works")
              console.log(" f = 25 is working pump 00 is running")
@@ -1035,29 +1062,38 @@ function pump_00() {
           observation_table_1150_text4.style.visibility = "visible";
           observation_table_40.style.visibility = "hidden";
           observation_table_40.style.opacity = "0%";
-          ins.innerText = "Now Click On The Observation Table To see the reading at the 60% flow rate"
+          ins.innerText = "Now Click On The Observation Table To see the reading at the 00% flow rate"
           pulse(observation_table_command)
-                      observation_table_1150_text4.addEventListener("click",  () => {
-                      
-    pulse(observation_table_1150_text4);
-
-    if (observation_table_00.style.visibility === "visible") {
-        observation_table_00.style.visibility = "hidden";
-        observation_table_Note.style.visibility = "hidden"
-    } else {
-        observation_table_00.style.visibility = "visible";
-        observation_table_1150_text4.style.visibility = "visible";
-        observation_table_Note.style.visibility = "visible"
-    }
-});
-  setTimeout(() => {
+                               observation_table_1150_text4.addEventListener("click",  () => {
+                                 pulse(observation_table_1150_text4);
+             if(f === 24.8){
+              f = 24.9;
+              observation_table_00.style.visibility = "visible";
+                       observation_table_Note.style.visibility ="visible"
+                       ins.innerText = "Click on the observation table again to close it"
+                        observation_table_1150_text4.addEventListener("click",  () => {
+             if(f === 24.9){
+              f = 25;
+              observation_table_00.style.visibility = "hidden";
+              observation_table_1150_text4.style.visibility = "visible";
+              observation_table_Note.style.visibility = "hidden"
+              popUp(observation_table_1150_text4)
+              
+        
+        console.log("the value of f is on seraching for better", f)
+     setTimeout(() => {
              ins.innerText = "Click on the next button after recording all the data for 00%"
-               
+               startbutton.style.visibility = "visible"
               startbutton.style.opacity = "100%";
     startlab.style.visibility = "visible";
     startbutton.innerText = "Next";  // ✅ Corrected
      startbutton.onclick = pump_1750;
      }, 1000);
+  }
+  })
+  }
+});
+  
              }, 1000);    //1500
            }, 1000);
          }, 1000);
@@ -1151,7 +1187,7 @@ function pump_1750() {
                       pump_additional_pressure.innerText = "0.10";
                       rotating_gauges2.style.visibility = "hidden";
                       rotating_gauges3.style.visibility = "visible";
-
+                     circular_gauges.style.visibility = "hidden"
                       setTimeout(() => {
                         pumpA_shaft_torque.innerText = "30.040 LB-IN";
                         rotating_gauges1.style.visibility = "visible";
@@ -1255,9 +1291,9 @@ function pump_1750() {
                                                   console.log("f = 29 is running");
 
                                                   if (f === 30) {
-                                                    f = 31;
+                                                    f = 30.8;
                                                     ins.innerText =
-                                                      "Now record all the values this is the value at 1750 RPM For Pump A, We have to compare Readings with different flow rates ✅✅";
+                                                      "Now record all the values at 1750 RPM For Pump A, We have to compare Readings with different flow rates ✅✅";
                                                     observation_table_command1.style.visibility =
                                                       "visible";
                                                     pulse(observation_table_command1);
@@ -1269,28 +1305,24 @@ function pump_1750() {
                                                         observation_table_1750_text
                                                       );
 
-                                                   observation_table_1750_text.addEventListener("click", () => {
-  pulse(observation_table_1750_text);
-
-  if (observation_table_1750_100.style.visibility === "visible") {
-    observation_table_1750_100.style.visibility = "hidden";
-    observation_table_1750_text.style.visibility = "visible";
-  observation_table_Note_1750.style.visibility = "hidden"
-    // 🔹 Print message if visible
-    console.log("Observation table is currently visible, hiding it now.");
-  } else {
-    observation_table_1750_100.style.visibility = "visible";
+                                                 observation_table_1750_text.addEventListener("click", () => {
+                            pulse(observation_table_1750_text);   ;
+             if(f === 30.8){
+              f = 30.9;
+             observation_table_1750_100.style.visibility = "visible";
     observation_table_1750_text.style.visibility = "visible";
   observation_table_Note_1750.style.visibility = "visible"
-    // 🔹 Print message if not visible
-    console.log("Observation table is not visible, showing it now.");
-  }
-});
-
-
-                                                     
-
-                                                      setTimeout(() => {
+  ins.innerText = "Now click on the observation tabl again to close the observation"
+                                    observation_table_1750_text.addEventListener("click", () => {
+             if(f === 30.9){
+              f = 31;
+               observation_table_1750_100.style.visibility = "hidden";
+               observation_table_Note_1750.style.visibility = "hidden"
+              popUp(observation_table_1150_text)
+              
+        
+        console.log("the value of f is on seraching for better", f)
+       setTimeout(() => {
                                                         ins.innerText =
                                                           "Now Click On Next Button To Repeat The Experiment For Different Flow Rate Such As 85%";
                                                           startbutton.style.visibility = "visible"
@@ -1303,6 +1335,15 @@ function pump_1750() {
                                                         startbutton.onclick =
                                                           pump_1750_85;
                                                       }, 1000);
+  }
+  })
+  }
+});
+
+
+                                                     
+
+                                                      
                                                     }, 1000);
                                                   }
                                                 }, 1000);
@@ -1363,8 +1404,9 @@ function updateFrequency1() {
 
 
 function pump_1750_85() {
+  startbutton.style.visibility = "hidden"
         if (f === 31) {
-            f = 32
+            f = 31.8
   observation_table_1750_text.style.visibility = "hidden"
   observation_table_1750_text.style.opacity = "0%"
   observation_table_1750_text1.style.visibility = "visible"
@@ -1409,7 +1451,7 @@ function pump_1750_85() {
         pumpA_discharge_pressure.innerText = "101.2"
         pump_additional_pressure.innerText = "0.56"
 
-        ins.innerText = "Now Record All The Readings For 85% Flow Rate"
+        ins.innerText = "Click on the observation table to Record All The Readings For 85% Flow Rate"
         observation_table_command1.style.visibility = "visible";
         observation_table_1750_text1.style.visibility = "visible";
         observation_table_1750_text.style.visibility = "hidden";
@@ -1417,22 +1459,24 @@ function pump_1750_85() {
         observation_table_1750_100.style.visibility = "hidden";
         pulse(observation_table_command1)
         
-        observation_table_1750_text1.addEventListener("click", () => {
-          pulse(observation_table_1750_text1);
-
-          if (observation_table_1750_85.style.visibility === "visible") {
-            observation_table_1750_85.style.visibility = "hidden";
-            observation_table_Note_1750.style.visibility = "hidden"
-             observation_table_Note_1750.style.visibility = "hidden"
-          } else {
-            observation_table_1750_85.style.visibility = "visible";
-            observation_table_1750_text1.style.visibility = "visible";
-            observation_table_Note_1750.style.visibility = "visible"
-             observation_table_Note_1750.style.visibility = "visible"
-          }
-        });
+                                                         observation_table_1750_text1.addEventListener("click", () => {
+                                  pulse(observation_table_1750_text1);
+             if(f === 31.8){
+              f = 31.9;
+             observation_table_1750_85.style.visibility = "visible";
+    observation_table_1750_text1.style.visibility = "visible";
+  observation_table_Note_1750.style.visibility = "visible"
+  ins.innerText = "Now click on the observation table again to close the observation"
+                                    observation_table_1750_text1.addEventListener("click", () => {
+             if(f === 31.9){
+              f = 32;
+               observation_table_1750_85.style.visibility = "hidden";
+              observation_table_1750_text1.style.visibility = "visible";
+               pulse(observation_table_1750_text1);
+              observation_table_Note_1750.style.visibility = "hidden"
         
-        setTimeout(() => {
+        console.log("the value of f is on seraching for better", f)
+       setTimeout(() => {
           ins.innerText = "Click on the next button after recording all the data for 85% , Now the time for 60 %"
            startbutton.style.visibility = "visible"
            console.log(start )
@@ -1441,8 +1485,14 @@ function pump_1750_85() {
           startbutton.innerText = "Next";
           startbutton.onclick = pump_1750_60;
         }, 1000);
-      }, 0);
-    }, 0);
+  }
+  })
+  }
+});
+        
+       
+      }, 1000);
+    }, 1000);
   }, 1000);
 })
         }
@@ -1450,11 +1500,12 @@ function pump_1750_85() {
 
 // Function for 60% flow rate at 1750 RPM
 function pump_1750_60() {
+  startbutton.style.visibility = "hidden"
   ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 60%"
   
   rotating_gauges3.addEventListener("click", () => {
     if(f === 32){
-      f = 33;
+      f = 32.8;
       rotating_gauges3.style.transform = "rotate(190deg)"
       console.log("rotating_gauges2 works")
       
@@ -1501,29 +1552,39 @@ function pump_1750_60() {
             ins.innerText = "Now Click On The Observation Table To see the reading at the 60% flow rate"
             pulse(observation_table_command1)
             
-            observation_table_1750_text2.addEventListener("click", () => {
-              pulse(observation_table_1750_text2);
-
-              if (observation_table_1750_60.style.visibility === "visible") {
-                observation_table_1750_60.style.visibility = "hidden";
-                observation_table_Note_1750.style.visibility = "hidden"
-              } else {
-                observation_table_1750_60.style.visibility = "visible";
-                observation_table_1750_text2.style.visibility = "visible";
-                 observation_table_Note_1750.style.visibility = "visible"
-              }
-            });
-            
-            setTimeout(() => {
+                                       observation_table_1750_text2.addEventListener("click", () => {
+                                  pulse(observation_table_1750_text2);
+             if(f === 32.8){
+              f = 32.9;
+             observation_table_1750_60.style.visibility = "visible";
+    observation_table_1750_text2.style.visibility = "visible";
+  observation_table_Note_1750.style.visibility = "visible"
+  ins.innerText = "Now click on the observation table again to close the observation"
+                        observation_table_1750_text2.addEventListener("click", () => {
+             if(f === 32.9){
+              f = 33;
+               observation_table_1750_60.style.visibility = "hidden";
+              observation_table_1750_text2.style.visibility = "visible";
+               pulse(observation_table_1750_text2);
+              observation_table_Note_1750.style.visibility = "hidden"
+        
+        console.log("the value of f is on seraching for better", f)
+        setTimeout(() => {
               ins.innerText = "Click on the next button after recording all the data for 60% , Now the time for 40 %"
-               
+               startbutton.style.visibility = "visible"
               startbutton.style.opacity = "100%";
               startlab.style.visibility = "visible";
               startbutton.innerText = "Next";
               startbutton.onclick = pump_1750_40;
             }, 1000);
-          }, 0);
-        }, 0);
+  }
+  })
+  }
+});
+            
+            
+          }, 1000);
+        }, 1000);
       }, 1000);
     }
   }, { once: true })
@@ -1531,11 +1592,12 @@ function pump_1750_60() {
 
 // Function for 40% flow rate at 1750 RPM
 function pump_1750_40() {
+  startbutton.style.visibility = "hidden"
   ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 40%"
   
   rotating_gauges3.addEventListener("click", () => {
     if(f === 33){
-      f = 34;
+      f = 33.8;
       rotating_gauges3.style.transform = "rotate(420deg)"
       console.log("rotating_gauges2 works")
       
@@ -1591,29 +1653,39 @@ function pump_1750_40() {
             ins.innerText = "Now Click On The Observation Table To see the reading at the 40% flow rate"
             pulse(observation_table_command1)
             
-            observation_table_1750_text3.addEventListener("click", () => {
-              pulse(observation_table_1750_text3);
-              console.log("observation_table_1750_40 is running")
+                                              observation_table_1750_text3.addEventListener("click", () => {
+                                  pulse(observation_table_1750_text3);
+             if(f === 33.8){
+              f = 33.9;
+             observation_table_1750_40.style.visibility = "visible";
+    observation_table_1750_text3.style.visibility = "visible";
+  observation_table_Note_1750.style.visibility = "visible"
+  ins.innerText = "Now click on the observation table again to close the observation"
+                        observation_table_1750_text3.addEventListener("click", () => {
+             if(f === 33.9){
+              f = 34;
+               observation_table_1750_40.style.visibility = "hidden";
+              observation_table_1750_text3.style.visibility = "visible";
+              observation_table_Note_1750.style.visibility = "hidden"
+               pulse(observation_table_1750_text3);
               
-              if (observation_table_1750_40.style.visibility === "visible") {
-                observation_table_1750_40.style.visibility = "hidden";
-                observation_table_Note_1750.style.visibility = "hidden"
-              } else {
-                observation_table_1750_40.style.visibility = "visible";
-                observation_table_1750_text3.style.visibility = "visible";
-                observation_table_Note_1750.style.visibility = "visible"
-              }
-            });
-            
-            setTimeout(() => {
+        
+        console.log("the value of f is on seraching for better", f)
+        setTimeout(() => {
               ins.innerText = "Click on the next button after recording all the data for 40, Now the time for 00%"
               console.log("the text is displayed correctly ")
-              
+              startbutton.style.visibility = "visible"
               startbutton.style.opacity = "100%";
               startlab.style.visibility = "visible";
               startbutton.innerText = "Next";
               startbutton.onclick = pump_1750_00;
             }, 1000);
+  }
+  })
+  }
+});
+            
+           
           }, 1000);
         }, 100);
       }, 1000);
@@ -1623,11 +1695,12 @@ function pump_1750_40() {
 
 // Function for 0% flow rate at 1750 RPM
 function pump_1750_00() {
+  startbutton.style.visibility = "hidden";
   ins.innerText = "Now click On Valves to rotate Clockwise to make the maximum flow rate 0%"
   
   rotating_gauges3.addEventListener("click", () => {
     if(f === 34){
-      f = 35;
+      f = 34.8;
       rotating_gauges3.style.transform = "rotate(520deg)"
       console.log("rotating_gauges2 works")
       console.log(" f = 35 is working pump 1750_00 is running")
@@ -1675,7 +1748,51 @@ function pump_1750_00() {
             ins.innerText = "Now Click On The Observation Table To see the reading at the 0% flow rate"
             pulse(observation_table_command1)
             
-            observation_table_1750_text4.addEventListener("click", () => {
+                                                    observation_table_1750_text4.addEventListener("click", () => {
+                                  pulse(observation_table_1750_text4);
+             if(f === 34.8){
+              f = 34.9;
+             observation_table_1750_00.style.visibility = "visible";
+    observation_table_1750_text4.style.visibility = "visible";
+  observation_table_Note_1750.style.visibility = "visible"
+  ins.innerText = "Now click on the observation table again to close the observation"
+                        observation_table_1750_text4.addEventListener("click", () => {
+             if(f === 34.9){
+              f = 35;
+               observation_table_1750_00.style.visibility = "hidden";
+              observation_table_1750_text4.style.visibility = "visible";
+               pulse(observation_table_1750_text4);
+               observation_table_Note_1750.style.visibility = "hidden"
+        
+        console.log("the value of f is on seraching for better", f)
+      setTimeout(() => {
+              ins.innerText = "Click on the next button after recording all the data for 0% , Experiment Complete!"
+                             startbutton.style.visibility = "visible"
+              startbutton.style.opacity = "100%";
+              startlab.style.visibility = "visible";
+              startbutton.innerText = "Complete";
+              startbutton.onclick = experiment_complete;
+            }, 1000);
+  }
+  })
+  }
+});
+            
+            
+          }, 100);
+        }, 100);
+      }, 1000);
+    }
+  }, { once: true })
+}
+
+// Function to handle experiment completion
+function experiment_complete() {
+  ins.innerText = "Experiment completed! Click on both observation table button to compare readings of both with different rates"
+  startbutton.style.visibility = "hidden";
+  startlab.style.visibility = "hidden";
+
+  observation_table_1750_text4.addEventListener("click", () => {
               pulse(observation_table_1750_text4);
 
               if (observation_table_1750_00.style.visibility === "visible") {
@@ -1687,25 +1804,17 @@ function pump_1750_00() {
                  observation_table_Note_1750.style.visibility = "visible"
               }
             });
-            
-            setTimeout(() => {
-              ins.innerText = "Click on the next button after recording all the data for 0% , Experiment Complete!"
-               
-              startbutton.style.opacity = "100%";
-              startlab.style.visibility = "visible";
-              startbutton.innerText = "Complete";
-              startbutton.onclick = experiment_complete;
-            }, 4000);
-          }, 100);
-        }, 100);
-      }, 1000);
-    }
-  }, { once: true })
-}
+               observation_table_1150_text4.addEventListener("click",  () => {
+                      
+    pulse(observation_table_1150_text4);
 
-// Function to handle experiment completion
-function experiment_complete() {
-  ins.innerText = "Experiment completed! All data has been recorded for both 1150 RPM and 1750 RPM operations."
-  startbutton.style.visibility = "hidden";
-  startlab.style.visibility = "hidden";
+    if (observation_table_00.style.visibility === "visible") {
+        observation_table_00.style.visibility = "hidden";
+        observation_table_Note.style.visibility = "hidden"
+    } else {
+        observation_table_00.style.visibility = "visible";
+        observation_table_1150_text4.style.visibility = "visible";
+        observation_table_Note.style.visibility = "visible"
+    }
+}); 
 }
